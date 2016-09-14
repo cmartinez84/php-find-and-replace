@@ -27,7 +27,7 @@
       Hard work good and hard work fine,/
       but first take care of head/
 
-      Whoa rock me to the night/"
+      Whoa rock me to the night/";
     public $option2 ="Pandora
       Pandora's aquarium/
       She dives for shells/
@@ -56,7 +56,7 @@
       She's in New Yourk somewhere/
       Checking her accounts/
       The Lord of The Files was/
-      Diagnosed as Sound/"
+      Diagnosed as Sound/";
       public $option3 = "The magic of a word – Dada – which has brought journalists to the gates of a world unforeseen, is of no importance
         to us.
 
@@ -70,7 +70,7 @@
 
         Every spectator is a plotter, if he tries to explain a word (to know!) From his padded refuge of serpentine complications, he allows his instincts to be manipulated. Whence the sorrows of conjugal life.
 
-        To be plain: The amusement of redbellies in the mills of empty skulls."
+        To be plain: The amusement of redbellies in the mills of empty skulls.";
       public $option4 = "Do you like green eggs and ham?
             Do you like green eggs and ham?
 
@@ -84,6 +84,14 @@
 
             I do so like green eggs and ham!
             Thank you! Thank you,
-            Sam-I-am!"
+            Sam-I-am!";
+    function processData($input){
+      if (($_POST['input'] != "option1") && ($_POST['input'] != "option2") && ($_POST['input'] != "option3") && ($_POST['input'] != "option4") && ($_POST['input'] != "option5")){
+        return $input;
+      }
+      else{
+        return $this->$input;
+      }
+    }
           }
  ?>

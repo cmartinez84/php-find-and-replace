@@ -1,12 +1,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Template</title>
   </head>
   <body>
-    <div class="container">
-      <h1>{{result}}</h1>
+    <div class="container" style="padding: 100px">
+      <p class="hide" id="current" style="color: red">{{result.storedSentence}}</p>
+      <p class="hide" id="previous" >{{result.previous}}</p>
+      <div class="results" style="font-size:24px; font-family: monospace">
+      </div>
       <form class="" action="/madlib2" method="post">
         <button type="submit" name="button">Change More Words!</button>
       </form>
