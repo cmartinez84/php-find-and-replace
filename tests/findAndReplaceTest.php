@@ -12,8 +12,8 @@
           $input_sentence = "Hello World";
 
           //Act
-          $result = $test_playFindAndReplace->playFindAndReplace($input_search_string, $input_replacement, $input_sentence);
-
+          $test_playFindAndReplace->playFindAndReplace($input_search_string, $input_replacement, $input_sentence);
+          $result = $test_playFindAndReplace->storedSentence;
           //Assert
           $this->assertEquals("Hello Wp", $result);
         }
