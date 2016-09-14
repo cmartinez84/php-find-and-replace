@@ -3,10 +3,10 @@
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/findAndReplace.php";
 
-    // session_start();
-    // if (empty($_SESSION['collection'])) {
-    //     $_SESSION['collection'] = array();
-    // }
+    session_start();
+    if (empty($_SESSION['madlib'])) {
+        $_SESSION['madlib'] = array();
+    }
 
     $app = new Silex\Application();
 
@@ -16,6 +16,7 @@
 
   //loads actual twig file
     $app->get("/", function() use ($app) {
+
       return $app['twig']->render("home.html.twig");
     });
 
@@ -33,9 +34,24 @@
       $input_sentence = $_POST['input_sentence'];
       $input_replacement = $_POST['input_replacement'];
       $newFindAndReplace = new findAndReplace;
-      $result = $newFindAndReplace->findAndReplaceRandom($input_sentence, $input_replacement);
-      return $app['twig']->render("resultRandom.html.twig", array('result'=>$result));
+      $result = $newFindAndReplace->findAndReplaceRandom($input_sentence);
+      return $app['twig']->render("result.html.twig", array('result'=>$newFindAndReplace->storedSentence));
     });
+    $app->post("/madlib", function() use ($app) {
+      $input_sentence = $_POST['input_sentence'];
+      $newFindAndReplace = new findAndReplace;
+      $result = $newFindAndReplace->madlib($input_sentence);
+      $newFindAndReplace->save();
+      var_dump($newFindAndReplace);
+      return $app['twig']->render("result.html.twig", array('result'=>$newFindAndReplace->storedSentence));
+    });
+    $app->post("/madlib2", function() use ($app) {
+      $madlib = $_SESSION['madlib'];
+      $result = $madlib->madlib($madlib->storedSentence);
+      return $app['twig']->render("result.html.twig", array('result'=>$madlib->storedSentence));
+    });
+
+
 
     return $app;
 ?>

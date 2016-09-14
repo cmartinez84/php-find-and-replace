@@ -17,5 +17,15 @@
           //Assert
           $this->assertEquals("Hello Wp", $result);
         }
+        function test_upperCase(){
+          $test_upperCase = new findAndReplace;
+          $input_sentence = "hello. f.";
+
+          //Act
+          $result = $test_upperCase->upperCase($input_sentence);
+
+          //Assert
+          $this->assertEquals("Hello. F.", $result);
+        }
     }
 ?>

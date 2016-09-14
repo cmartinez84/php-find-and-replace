@@ -10,15 +10,15 @@
       <form class="" action="/game" method="post">
         <div class="form-group">
           <label for="">Enter a sentence:</label>
-          <input type="text" name="input_sentence" value="">
+          <input type="text" name="input_sentence" class="form-control">
         </div>
         <div class="form-group">
           <label for="">Replace:</label>
-          <input type="text" name="input_search_string" value="">
+          <input type="text" name="input_search_string" class="form-control">
         </div>
         <div class="form-group">
           <label for="">Replace with:</label>
-          <input type="text" name="input_replacement" value="">
+          <input type="text" name="input_replacement" class="form-control">
         </div>
         <button type="submit" class="btn btn-default">Go!</button>
       </form>
@@ -27,11 +27,20 @@
       <form class="" action="/randomGame" method="post">
         <div class="form-group">
           <label for="">Enter a sentence:</label>
-          <input type="text" name="input_sentence" value="">
+          <input type="text" name="input_sentence" class="form-control">
         </div>
         <div class="form-group">
           <label for="">Replace with:</label>
-          <input type="text" name="input_replacement" value="">
+          <input type="text" name="input_replacement" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-default">Go!</button>
+      </form>
+
+      <h2>Play Some Mad MadLibs!</h2>
+      <form class="" action="/madlib" method="post">
+        <div class="form-group">
+          <label for="">Enter a sentence:</label>
+          <input type="text" name="input_sentence" class="form-control">
         </div>
         <button type="submit" class="btn btn-default">Go!</button>
       </form>
