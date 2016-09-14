@@ -42,7 +42,6 @@
       $newFindAndReplace = new findAndReplace;
       $result = $newFindAndReplace->madlib($input_sentence);
       $newFindAndReplace->save();
-      var_dump($newFindAndReplace);
       return $app['twig']->render("result.html.twig", array('result'=>$newFindAndReplace->storedSentence));
     });
     $app->post("/madlib2", function() use ($app) {
